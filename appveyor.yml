@@ -1,7 +1,7 @@
 clone_depth: 5
 environment:
   access_token:
-    secure: [WGrwDqqFWO7A3Lzar7WMiyLXreRwUpe64Cq34tbP0839UnJiecGedjdsYzCzcK2c]
+    secure: WGrwDqqFWO7A3Lzar7WMiyLXreRwUpe64Cq34tbP0839UnJiecGedjdsYzCzcK2c
 install:
   - node --version
   - npm --version
@@ -23,3 +23,4 @@ on_success:
   - SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
   - git add -A
   - if "%APPVEYOR_REPO_BRANCH%"=="master" if not defined APPVEYOR_PULL_REQUEST_NUMBER (git diff --quiet --exit-code --cached || git commit -m "Update Static Site" && git push origin %TARGET_BRANCH% && appveyor AddMessage "Static Site Updated")
+  
