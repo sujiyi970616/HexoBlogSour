@@ -64,8 +64,6 @@ and put your own things on it.
 
 then display it.
 
-![Alt Text](../Image.jpg)
-
 
 ![upload successful](/images/pasted-2.png)
 <!--more-->
